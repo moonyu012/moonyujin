@@ -1,0 +1,34 @@
+*{
+    text-align: center;
+}
+html{
+    background-color: #b3a194;
+    font-size: 16px;
+}
+
+
+body{
+    width: 640px;
+    margin: auto;/* 너비에서 남는 여백을 동일하게 분배 */
+}
+
+h1{
+    font-size:  48px;
+    font-family: monospace;
+}
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+
+p{
+    font-size: 1.5rem;
+}
+div{id="introduce"
+    width: 300px;
+    height: 250px;
+    padding: 30px;
+    border: 10px dotted brown;
+    margin: auto;
+}
