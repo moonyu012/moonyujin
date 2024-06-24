@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>createElement & appendChild</title>
+        <style>
+           
+        </style>
+    </head>
+    <body>
+        <div id="container"></div>
+        <script>
+
+            for(let a = 1; a <= 5; a += 1){
+                const div = document.getElementById("container")
+                const box = document.createElement("div")
+                console.log(box)
+                box.style.color = "blue"
+                box.style.width = "200px"
+                box.style.height = "200px"
+                box.textContent = "진짜 헷갈린다!! 콘솔에서 미리 오류가 없나 확인하고 본문에 넣는 용도 인가요"
+                div.appendChild(box) 
+            }
+            
+                /* append : 단순 텍스트 문자열도 추가가능 추가 하고 반환을 안함(콘솔에) undefined  */
+        </script>
+    </body>
+
+</html>
