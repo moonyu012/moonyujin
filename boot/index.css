@@ -1,0 +1,80 @@
+body {
+    background-color: #f8f9fa; /* 배경색 */
+    color: #212529; /* 글자색 */
+}
+
+.container {
+    background-color: #ffffff; /* 컨테이너 배경색 */
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 다크 모드 */
+body.dark-mode {
+    background-color: black; /* 다크 배경색 */
+    color: #ffffff; /* 다크 글자색 */
+}
+
+.container.dark-mode {
+    background-color: #454d55; /* 다크 모드 컨테이너 배경색 */
+}
+
+/* 토글 버튼 스타일 */
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form-select, .col-12 {
+    width: 110px;
+    height: 35px; 
+}
+.ggg {
+    width: 60px;
+    height: 30px;
+    margin: 0px 5px 0px;
+
+}
+
+
+.col-3{
+    width: 210px;
+    height: 30px;
+    
+}
+#aa{
+    margin: 0px 5px 0px;
+    width: 190px;
+}
+.btn-primary {
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    line-height: 15px;
+}
+#join{
+  margin-top: 50px; 
+  position: fixed;
+  right: 260px;
+
+
+}

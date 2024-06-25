@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Admin Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="index.css" rel="stylesheet">
+</head>
+<body>
+    
+    <h6 id="clock">00:00:00</h6> 
+    <style>
+        
+        
+    </style>
+    <div class="container mt-3">
+        <h3 class="mt-5 mb-3">신규 등록 상품</h3>
+        <form class="row row-cols-lg-auto g-3 align-items-center">      
+            <div class="col-12">
+              <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+              <select class="form-select" id="inlineFormSelectPref">
+                <option value="cate" disabled selected>카테고리</option>
+                <option value="top">상의</option>
+                <option value="bottoms">하의</option>
+                <option value="shose">신발</option>
+                <option value="accessory">패션잡화</option>
+              </select>
+            </div>
+            <div class="gender">
+                <label class="Gender" for="gee"></label>
+                <select class="ggg" id="gee">
+                    <option value="all">전체</option>
+                    <option value="female">여성</option>
+                    <option value="male">남성</option>
+                </select>
+
+            </div>
+            <div class="col-3">
+                <input type="text" id="aa" placeholder="제품명을 입력해주새요">
+              </div>
+              <div class="col-auto">
+                <button type="button" class="btn btn-primary">조회</button>
+              </div>
+          </form>
+          <div class="container mt-3">
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th>카테고리</th>
+                    <th>브랜드</th>
+                    <th>상품명</th>
+                    <th>가격</th>
+                </tr>
+            </thead>
+            <tbody id="data-table">
+                <!-- 추후 크롤링한 데이터가 들어가는 자리 -->
+            </tbody>
+        </table>
+    </div>
+    <nav aria-label="...">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item active" aria-current="page">
+            <a class="page-link" href="#">2</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+      <div id="join">
+        <button type="button" onclick="location.href='join1.html'" class="btn btn-outline-primary">회원가입</button>
+    </div>
+    <div>
+        <button class="toggle-btn" onclick="toggleDarkMode()">다크 모드</button>
+    </div> 
+   
+   <script>
+      // 크롤링한 데이터를 아래와 같은 형태의 객체 배열로 가정합니다.
+      // 추후 데이터베이스에 있는 데이터를 쿼리문으로 불러 올 수 있게 쿼리르 작성해 볼 수 있음
+      const data = [
+          { category: "상의", brand: 'Supreme', product: '슈프림 박스로고 후드티', price: '390,000' },
+          { category: "하의", brand: 'DIESEL', product: '디젤 트랙 팬츠', price: '188,000' },
+          { category: "신발", brand: 'Nike', product: '에어포스 1', price: '137,000' },
+          { category: "패션잡화", brand: 'Music&Goods', product: '빵빵이 키링', price: '29,000' },
+          // ...
+      ];
+      
+      const dataTable = document.getElementById('data-table');
+      
+      data.forEach((item) => {
+          const row = dataTable.insertRow();
+          row.insertCell(0).innerHTML = item.category;
+          row.insertCell(1).innerHTML = item.brand;
+          row.insertCell(2).innerHTML = item.product;
+          row.insertCell(3).innerHTML = item.price;
+      });
+      function toggleDarkMode() {
+        const body = document.body;
+        const containers = document.querySelectorAll('.container');
+
+        body.classList.toggle('dark-mode');
+        containers.forEach(container => {
+            container.classList.toggle('dark-mode');
+        });
+    }
+     const clock = document.getElementById("clock")
+
+     function getClock(){
+        const now = new Date();  // 현재 날짜 및 시간
+        const hour = now.getHours();
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+        clock.innerText = `${hour}:${minutes}:${seconds}`
+     }
+
+     getClock();
+     setInterval(getClock, 1000);
+    
+     let today = new Date();   
+
+        document.write(today.toLocaleDateString());
+
+   
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
