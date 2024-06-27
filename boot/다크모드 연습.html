@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>다크모드 연습</title>
+        <style>
+            body.dark-mode {
+            background-color: black;
+            color: #ffffff;
+        } 
+        </style>
+    </head>
+    <body>
+<button id="dark">다크모드</button>
+
+<script>
+    const darBtn = document.getElementById("dark")
+
+    darBtn.addEventListener("click",function(){
+        document.body.classList.toggle('dark-mode');
+    
+    })/* darBtn에 할당된 버튼 아이디를 이용하여 
+         이벤트 핸들링 click과 funcition함수를 사용 
+         click했을때 body요소의 classList에서 dark-mode를 토글한다. 
+         */
+</script>
+    </body>
+
+</html>

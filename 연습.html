@@ -9,8 +9,8 @@
     
     <h5 id="clock">00:00:00</h5> 
     <style>
-        
-        
+       
+      
     </style>
     <div class="container mt-3">
         <h3 class="mt-5 mb-3">신규 등록 상품</h3>
@@ -75,7 +75,7 @@
         <button type="button" onclick="location.href='join1.html'" class="btn btn-outline-primary">회원가입</button>
     </div>
     <div>
-        <button class="toggle-btn" onclick="toggleDarkMode()">다크 모드</button>
+        <button class="toggle-btn" id="dark">다크 모드</button>
     </div> 
    
    <script>
@@ -98,22 +98,19 @@
           row.insertCell(2).innerHTML = item.product;
           row.insertCell(3).innerHTML = item.price;
       });
-      function toggleDarkMode() {
-        const body = document.body;
-        const containers = document.querySelectorAll('.container');
+        const darBtn = document.getElementById("dark")
 
-        body.classList.toggle('dark-mode');
-        containers.forEach(container => {
-            container.classList.toggle('dark-mode');
-        });
-    }
+        darBtn.addEventListener("click",function(){
+        document.body.classList.toggle('dark-mode');
+
+})
      const clock = document.getElementById("clock")
 
      function getClock(){
         const now = new Date();  // 현재 날짜 및 시간
-        const hour = now.getHours(); //시간 구하기
-        const minutes = now.getMinutes(); //분 구하기
-        const seconds = now.getSeconds(); // 초 구하기
+        const hour = now.getHours();
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
         clock.innerText = `${hour}:${minutes}:${seconds}`
      }
 
@@ -122,7 +119,7 @@
     
      let today = new Date();   
 
-        document.write(today.toLocaleDateString()); //브라우저에 설정된 국가에서 사용되는 표현형식으로 보여줌
+        document.write(today.toLocaleDateString());
 
    
     </script>
