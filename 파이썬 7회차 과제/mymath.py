@@ -1,8 +1,11 @@
-def triangle_area(base, height):
-    return 0.5 * base * height
+pi=3.14
 
-def circle_area(radius):
-    return math.pi * radius ** 2
+def circle(radius):
+    return pi*radius**2
 
-def cuboid_area(length, width, height):
-    return 2 * (length * width + width * height + height * length)
+def triangle(x,y):
+    return x*y/2
+
+
+def square(x,y,h):
+    return (x*y+y*h+x*h)*2
