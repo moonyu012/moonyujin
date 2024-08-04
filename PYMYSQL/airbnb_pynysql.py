@@ -9,16 +9,16 @@ connection = pymysql.connect(
     charset='utf8mb4', # 이모지 개념 설정
     cursorclass = pymysql.cursors.DictCursor
 )
-
-with connection.cursor() as cursor:
+#with 작업의 시작과 끝을 정의 작업이 끝난 후 자동으로 정리를 수행
+with connection.cursor() as cursor: # cursor의 역할 SQL쿼리 실행과 경과를 가져올때 사용
     # 문제1: 새로운 제품 추가
      sql = "INSERT INTO Products(productName, price, stockQuantity) VALUES (%s,%s,%s)"
-     cursor.execute(sql, ('Python Book', 10000, 10))
-     connection.commit()
+     cursor.execute(sql, ('Python Book', 10000, 10)) # 데이터 베이스에 전달
+     connection.commit() # 전달한걸 반영하겠다.
     
     # #문제2: 고객 목록 조회
      cursor.execute("SELECT * FROM Products")
-     for book in cursor.fetchall():
+     for book in cursor.fetchall(): # 가져온 행을 돌면서 처리
          print(book)
 
     # # 문제3: 제품 재고 업데이트
