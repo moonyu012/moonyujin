@@ -1,6 +1,11 @@
-A = input()
-B = input()
-C = input()
+x = int(input())
+y = int(input())
 
-print(int(A) + int(B) - int(C))
-print(int(A + B) - int(C))
+if x > 0 and y > 0:
+    print(1)
+elif x < 0 and y > 0:
+    print(2)
+elif x < 0 and y < 0:
+    print(3)
+else:
+    print(4)
